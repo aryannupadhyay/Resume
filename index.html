@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aryan Upadhyay - Data Science & Computer Science Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #5e35b1;
+            --secondary: #7e57c2;
+            --accent: #b39ddb;
+            --text: #2d3748;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --card-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light-bg);
+            margin: 0;
+            padding: 2rem;
+        }
+        
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 0;
+            background: var(--white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        /* Left Sidebar */
+        .sidebar {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 1.5rem;
+        }
+        
+        .profile-container {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent);
+            margin: 0 auto 1rem;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .sidebar-section {
+            margin-bottom: 2rem;
+        }
+        
+        .sidebar-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            padding-bottom: 0.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.85rem;
+        }
+        
+        .contact-icon {
+            width: 20px;
+            text-align: center;
+        }
+        
+        .skill-category {
+            margin-bottom: 1rem;
+        }
+        
+        .skill-name {
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+        }
+        
+        .skill-bar {
+            height: 6px;
+            background-color: rgba(255,255,255,0.2);
+            border-radius: 3px;
+            margin-bottom: 0.8rem;
+        }
+        
+        .skill-level {
+            height: 100%;
+            background-color: var(--accent);
+            border-radius: 3px;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 2rem;
+        }
+        
+        .header {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+        
+        .title {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+        
+        .section {
+            margin-bottom: 2rem;
+        }
+        
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .section-title i {
+            color: var(--accent);
+        }
+        
+        .subsection {
+            margin-bottom: 1.5rem;
+            background: var(--light-bg);
+            padding: 1rem;
+            border-radius: 6px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .subsection-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subsection-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        
+        .subsection-date {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+        
+        ul {
+            padding-left: 1.2rem;
+            margin: 0.5rem 0;
+        }
+        
+        li {
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+        }
+        
+        .project-tech {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+        
+        .skill-tag {
+            background: var(--light-bg);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-align: center;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+        
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            
+            .resume-container {
+                box-shadow: none;
+                grid-template-columns: 250px 1fr;
+            }
+            
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div style="height: 80px;"></div>
+<div style="height: 80px;"></div>
+            <div class="sidebar-section">
+                <h2 class="sidebar-title">Contact</h2>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div>aryanupadhyay303@gmail.com</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                    <div>linkedin.com/in/aryannupadhyay</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fab fa-github"></i></div>
+                    <div>github.com/aryannupadhyay</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fab fa-youtube"></i></div>
+                    <div>youtube.com/@QuantumChunk</div>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h2 class="sidebar-title">Technical Skills</h2>
+                
+                <div class="skill-category">
+                    <div class="skill-name">Python</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 90%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-name">Data Science</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 85%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-name">Machine Learning</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 80%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-name">Web Development</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h2 class="sidebar-title">Tools</h2>
+                <div class="skills-container">
+                    <div class="skill-tag">Pandas</div>
+                    <div class="skill-tag">NumPy</div>
+                    <div class="skill-tag">Matplotlib</div>
+                    <div class="skill-tag">Flask</div>
+                    <div class="skill-tag">Git</div>
+                    <div class="skill-tag">MongoDB</div>
+                    <div class="skill-tag">Jupyter</div>
+                    <div class="skill-tag">REST APIs</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1 class="name">Aryan Upadhyay</h1>
+                <div class="title">Dual Degree in Data Science & Computer Science at IIT Madras</div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-user-tie"></i> Professional Summary</h2>
+                <p>Curious and solution-driven student pursuing dual degrees in <strong>B.S. Data Science</strong> and <strong>B.Sc. Computer Science</strong> from <strong>IIT Madras</strong>. Passionate about creating impactful tech tools that bridge education, AI, and interactivity. Experienced in full-stack development, chatbot building, satellite-based AI systems, and educational content creation.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+                <div class="subsection">
+                    <div class="subsection-header">
+                        <h3 class="subsection-title">Indian Institute of Technology Madras</h3>
+                        <div class="subsection-date">Expected Graduation: [Year]</div>
+                    </div>
+                    <ul>
+                        <li>Dual Degree: B.S. Data Science & B.Sc. Computer Science</li>
+                        <li>Focus: Data Structures, Algorithms, Machine Learning, Statistics</li>
+                        <li>Ongoing projects in educational tech and AI applications</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-lightbulb"></i> Projects</h2>
+                
+                <div class="subsection">
+                    <div class="subsection-header">
+                        <h3 class="subsection-title">AI-Based Educational Chatbot</h3>
+                        <div class="subsection-date">Google Solution Challenge</div>
+                    </div>
+                    <ul>
+                        <li>Built an AI chatbot with dual output: theoretical text + animated video explanations</li>
+                        <li>Designed for interactive, multimodal learning with adaptive responses</li>
+                    </ul>
+                    <div class="project-tech">Python | Chatbot Frameworks | Video APIs</div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-header">
+                        <h3 class="subsection-title">Satellite Climate Alert System</h3>
+                        <div class="subsection-date">Bhartiya Antriksh Hackathon</div>
+                    </div>
+                    <ul>
+                        <li>Developed real-time AI system using satellite data for environmental monitoring</li>
+                        <li>Created early warning system for agencies like ISRO</li>
+                    </ul>
+                    <div class="project-tech">Python | Satellite Data | Predictive Modeling</div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-header">
+                        <h3 class="subsection-title">Dynamic Quiz Generator</h3>
+                        <div class="subsection-date">Personal Project</div>
+                    </div>
+                    <ul>
+                        <li>Created platform with 36 curated questions in randomized sets</li>
+                        <li>Features: real-time timer, detailed analytics with explanations</li>
+                    </ul>
+                    <div class="project-tech">Flask | JavaScript | HTML/CSS</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-trophy"></i> Hackathons</h2>
+                <div class="subsection">
+                    <div class="subsection-header">
+                        <h3 class="subsection-title">Google Solution Challenge 2023</h3>
+                        <div class="subsection-date">Top 100 Finalist</div>
+                    </div>
+                    <ul>
+                        <li>Developed AI-powered educational chatbot</li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-header">
+                        <h3 class="subsection-title">Bhartiya Antriksh Hackathon 2025</h3>
+                        <div class="subsection-date">Finalist</div>
+                    </div>
+                    <ul>
+                        <li>Created satellite-based climate alert system</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-globe"></i> Online Presence</h2>
+                <ul>
+                    <li><strong>Portfolio:</strong> sites.google.com/ds.study.iitm.ac.in/aryanupadhyay/home</li>
+                    <li><strong>YouTube:</strong> youtube.com/@QuantumChunk (tech explainer videos)</li>
+                    <li><strong>Blog:</strong> quantumchunk.blogspot.com (AI/EdTech articles)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
